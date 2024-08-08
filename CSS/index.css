@@ -1,3 +1,22 @@
-html{
-    background-color: antiquewhite;
+body{
+    background-color: #7429C6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.containergame{
+    background-color:#030616;
+    width: 50vw;
+    height: 80vh;
+    border-radius: 20px;
+    margin: 40px;
+    padding: 20px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#wordcontainer input{
+    
 }

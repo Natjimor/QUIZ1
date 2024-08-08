@@ -1,36 +1,49 @@
-console.log('hola')
+console.log('hola');
+
 let words = [
     {
         word: ["f","l","o","w","e","r","s"],
-        letter: ["l","w","f","s","r","o","e"]
+        letter: ["LWFSROE"]
     },
     {
         word: ["a","p","p","l","e"],
-        letter: ["p","a","p","e","l"]
+        letter: ["PAEPL"]
     },
     {
         word: ["o","r","a","n","g","e"],
-        letter: ["r","o","a","g","n","e"]
+        letter: ["ROAGNE"]
     },
     {
         word: ["w","a","t","c","h","e","r"],
-        letter: ["r","a","e","c","h","t","w"]
+        letter: ["RAECHTW"]
     },
     {
         word: ["w","i","t","c","h"],
-        letter: ["h","t","i","c","w"]
+        letter: ["HTICHW"]
     },
 ];
 
 const aleatorio = words[Math.floor(Math.random() * words.length)];
-console.log(aleatorio)
+console.log(aleatorio);
 
-const letters = document.getElementById("containerword")
-letters.textContent = aleatorio.letter.join();
+const letters = document.getElementById("containerword");
+letters.textContent = aleatorio.letter.join('');
 
-aleatorio.letter.forEach(l => {
-    const container = document.querySelector("#wordcontainer")
-    const inputs = document.createElement("input")
-    inputs.type = "text"
-    container.appendChild(inputs)
+aleatorio.word.forEach((letter, index) => {
+    const container = document.querySelector("#wordcontainer");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.maxLength = 1;
+    container.appendChild(input);
+
+    input.addEventListener("change", (e) => {
+        const userInput = e.target.value.toLowerCase(); 
+
+        if (userInput === letter) {
+            console.log("Éxito");
+        } else {
+            console.log("Intenta de nuevo"); 
+        }
+    });
 });
+
